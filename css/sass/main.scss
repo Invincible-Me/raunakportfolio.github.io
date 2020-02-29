@@ -1,203 +1,106 @@
-* {
-      box-sizing: border-box;
-}
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/vendor';
+@import 'libs/breakpoints';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900');
+@import url('fontawesome-all.min.css');
 
-html {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100vh;
-}
 
-body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100vh;
-      font-family: Poppins;
-      font-weight: 400;
-    //   background: url(background-img.jpg);
-      background-position: center;
-      background-size: cover;
-}
 
-nav {
-      padding: 8px;
-}
+// Breakpoints.
 
-.logo {
-      float: left;
-      padding: 8px;
-      margin-left: 16px;
-      margin-top: 8px;
-}
+	@include breakpoints((
+		xxlarge: ( 1681px,  1920px ),
+		xlarge:  ( 1281px,  1680px ),
+		large:   ( 1001px,  1280px ),
+		medium:  ( 737px,   1000px ),
+		small:   ( 481px,   736px  ),
+		xsmall:  ( null,    480px  )
+	));
 
-.logo a {
-      color: #000;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: 18px;
-      letter-spacing: 0px;
-      text-decoration: none;
-}
+// Base.
 
-nav ul {
-      float: right;
-}
+	@import 'base/reset';
+	@import 'base/page';
+	@import 'base/typography';
 
-nav ul li {
-      display: inline-block;
-      float: left;
-}
+// Component.
 
-nav ul li:not(:first-child) {
-      margin-left: 48px;
-}
+	@import 'components/box';
+	@import 'components/button';
+	@import 'components/form';
+	@import 'components/icon';
+	@import 'components/image';
+	@import 'components/list';
+	@import 'components/actions';
+	@import 'components/icons';
+	@import 'components/section';
+	@import 'components/table';
+	@import 'components/poptrox-popup';
+	@import 'components/gallery';
 
-nav ul li:last-child {
-      margin-right: 24px;
-}
+// Layout.
 
-nav ul li a {
-      display: inline-block;
-      outline: none;
-      color: #000;
-      text-transform: uppercase;
-      text-decoration: none;
-      font-size: 14px;
-      letter-spacing: 1.2px;
-      font-weight: 600;
-}
+	@import 'layout/header';
+	@import 'layout/main';
+	@import 'layout/footer';
 
-@media screen and (max-width: 864px) {
-      .logo {
-            padding: 0;
-      }
+/* Intro */
 
-      .nav-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: #fff;
-            opacity: 0;
-            transition: all 0.2s ease;
-      }
+	#intro {
+		background: url('images/overlay.png'), url('../../images/intro.jpg');
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, bottom center;
+		background-repeat: repeat, no-repeat;
+	}
 
-      .nav-wrapper ul {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-      }
+/* One */
 
-      .nav-wrapper ul li {
-            display: block;
-            float: none;
-            width: 100%;
-            text-align: right;
-            margin-bottom: 10px;
-      }
+	#one {
+		background: url('images/overlay.png'), url('../../images/one.jpg');
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
 
-      .nav-wrapper ul li:nth-child(1) a {
-            transition-delay: 0.2s;
-      }
+/* Two */
 
-      .nav-wrapper ul li:nth-child(2) a {
-            transition-delay: 0.3s;
-      }
+	#two {
+		background: url('images/overlay.png'), url('../../images/two.jpg');
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
 
-      .nav-wrapper ul li:nth-child(3) a {
-            transition-delay: 0.4s;
-      }
+/* Contact */
 
-      .nav-wrapper ul li:nth-child(4) a {
-            transition-delay: 0.5s;
-      }
+	#contact {
+		overflow: hidden;
+		padding-bottom: 0;
 
-      .nav-wrapper ul li:not(:first-child) {
-            margin-left: 0;
-      }
+		.box {
+			@include vendor('transition', 'transform #{_duration(fade-in)} ease');
+			@include vendor('transform', 'translateY(0)');
+			position: relative;
+		}
 
-      .nav-wrapper ul li a {
-            padding: 10px 24px;
-            opacity: 0;
-            color: #000;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1.2px;
-            transform: translateX(-20px);
-            transition: all 0.2s ease;
-      }
+		&.inactive {
+			.box {
+				@include vendor('transform', 'translateY(100%)');
+			}
+		}
 
-      .nav-btn {
-            position: fixed;
-            right: 10px;
-            top: 10px;
-            display: block;
-            width: 48px;
-            height: 48px;
-            cursor: pointer;
-            z-index: 9999;
-            border-radius: 50%;
-      }
+		@include breakpoint('<=small') {
+			.box {
+				padding: 1.5em 1.5em 2em 1.5em;
+			}
+		}
 
-      .nav-btn i {
-            display: block;
-            width: 20px;
-            height: 2px;
-            background: #000;
-            border-radius: 2px;
-            margin-left: 14px;
-      }
-
-      .nav-btn i:nth-child(1) {
-            margin-top: 16px;
-      }
-
-      .nav-btn i:nth-child(2) {
-            margin-top: 4px;
-            opacity: 1;
-      }
-
-      .nav-btn i:nth-child(3) {
-            margin-top: 4px;
-      }
-}
-
-#nav:checked + .nav-btn {
-      transform: rotate(45deg);
-}
-
-#nav:checked + .nav-btn i {
-      background: #000;
-      transition: transform 0.2s ease;
-}
-
-#nav:checked + .nav-btn i:nth-child(1) {
-      transform: translateY(6px) rotate(180deg);
-}
-
-#nav:checked + .nav-btn i:nth-child(2) {
-      opacity: 0;
-}
-
-#nav:checked + .nav-btn i:nth-child(3) {
-      transform: translateY(-6px) rotate(90deg);
-}
-
-#nav:checked ~ .nav-wrapper {
-      z-index: 9990;
-      opacity: 1;
-}
-
-#nav:checked ~ .nav-wrapper ul li a {
-      opacity: 1;
-      transform: translateX(0);
-}
-
-.hidden {
-      display: none;
-}
+		@include breakpoint('<=xsmall') {
+			.box {
+				padding: 1em 1em 2em 1em;
+			}
+		}
+	}
