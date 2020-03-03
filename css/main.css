@@ -71,22 +71,25 @@ input, select, textarea {
 	-ms-appearance: none;
 	appearance: none;
 }
-a.active, a:hover {
-	background: #1b9bff;
-	transition: .5s;
+a:hover, a.active {
+	background: #069370;
+	color: #fff;
+	transition: 0.5s;
 }
+
+/* 
 .checkbtn {
 	font-size: 30px;
 	color: #1b9bff;
 	float: right;
-	/* line-height: 80px; */
+	
 	margin-right: 10px;
 	cursor: pointer;
 	display: none;
-}
-#check {
+} */
+/* #check {
 	display: none;
-}
+} */
 /* Basic */
 
 	@-ms-viewport {
@@ -1914,11 +1917,45 @@ a.active, a:hover {
 						font-size: 1em;
 					}
 
-				/* #header nav {
+				#header nav {
 					display: none;
-				} */
-				nav ul li a {
+				}
+				.menu-toggle {
+					/* display: block !important; */
+					position: relative;
+					width: 30px;
+					height: 30px;
+					top: -40px;
+					margin: 5px;
+					background: #ccc;
+					text-align: center;
+					font-size: 30px;
+					color: #069370;
+					float: right;
+					cursor: pointer;
+				}
+				.menu-toggle:before {
+					content: '\f0c9';
+					font-family: fontAwesome;
+					line-height: 40px;
+					
+				}
+				.menu-toggle.active:before {
+					content: '\f00d';
+					
+				}
+				#header nav.active {
+					display: block;
+					width: 100%;
+				}
+				#header nav.active ul {
+					display: block;
+				}
+				/* nav ul li a {
+					color: #FFF;
+					padding: 7px 13px;
 					font-size: 16px;
+					border-radius: 3px;
 				}
 				.checkbtn {
 					display: block;
@@ -1934,19 +1971,19 @@ a.active, a:hover {
 					text-align: center;
 					transition: all .5s;
 				}
-				/* nav ul li {
-					display: block;
-				} */
+				nav ul li {
+					display: block !important;
+					margin: 50px 0;
+					line-height: 30px;
+				}
 				nav ul li a{
 					font-size: 20px;
 				}
-				a:hover, a.active {
-					background: none;
-					color: #0082e6;
-				}
+				
 				#check:checked ~ ul {
 					left: 0;
-				}
+				} */
+				
 
 		}
 

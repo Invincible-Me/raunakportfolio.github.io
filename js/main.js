@@ -37,7 +37,12 @@
 			});
 
 		}
-
+    $(document).ready(function(){
+		$('.menu-toggle').click(function(){
+			$('.menu-toggle').toggleClass('active')
+			$('nav').toggleClass('active')
+		})
+	})
 	// Fix: IE flexbox fix.
 		if (browser.name == 'ie') {
 
