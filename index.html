@@ -5,6 +5,10 @@
 		<title>Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<script src="build/js/glide.min.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="build/css/glide.core.min.css">
+		<link rel="stylesheet" href="build/css/glide.theme.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 		<link rel="stylesheet" href="build/css/styles.css" />
 		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
 		<!-- <script src="https://kit.fontawesome.com/yourcode.js"></script> -->
@@ -50,7 +54,7 @@
 						<h2>What I Do <img src="images/work.svg"></h2>
 					</header>
 					<p>
-						I am a skilled Frontend Developer.
+						I am a skilled Frontend Developer. I Convert pixel-perfect responsive designs into stable & fast code that runs fluently on all major devices.
 					</p>
 				</div>
 				<a href="#two" class="button style2 down anchored">Next</a>
@@ -70,15 +74,52 @@
 				</div>
 				<a href="#work" class="button style2 down anchored">Next</a>
 			</section>
-
+		<!-- carousel -->
+			<section id="three">
+				<div class="images glide">
+					<div class="glide__track" data-glide-el="track">
+					  <ul class="glide__slides">
+						<li class="glide__slide">
+						  <img src="images/thumbs/01.jpg" alt="">
+						</li>
+			  
+						<li class="glide__slide">
+						  <img src="images/thumbs/02.jpg" alt="">
+						</li>
+			  
+						<li class="glide__slide">
+						  <img src="images/thumbs/03.jpg" alt="">
+						</li>
+			  
+						<li class="glide__slide">
+						  <img src="images/thumbs/04.jpg" alt="">
+						</li>
+			  
+						<li class="glide__slide">
+						  <img src="images/thumbs/05.jpg" alt="">
+						</li>
+			  
+						<li class="glide__slide">
+						  <img src="images/thumbs/06.jpg" alt="">
+						</li>
+					  </ul>
+					</div>
+			  
+					<div class="glide__arrows" data-glide-el="controls">
+					  <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-arrow-left"></i></button>
+					  <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-arrow-right"></i></button>
+					</div>
+				  </div>
+			</section>
 		<!-- Work -->
 			<section id="work" class="main style3 primary">
 				<div class="content">
 					<header>
-						<h2>My Work</h2>
-						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-						Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis
-						arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.</p>
+						<h2>My Work <img src="images/my_work.svg"></h2>
+						<p>
+							Frontend Developer at Onething UX/UI Studio |
+							Code Reviewer | Student Mentor at Udacity
+						</p>
 					</header>
 
 					<!-- Gallery  -->
@@ -110,8 +151,8 @@
 			<section id="contact" class="main style3 secondary">
 				<div class="content">
 					<header>
-						<h2>Say Hello.</h2>
-						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p>
+						<h2>Say Hello <img src="images/say_hello.svg"></h2>
+						<p>Want to ask a Question Related to my Work?</p>
 					</header>
 					<div class="box">
 						<form method="post" action="#">
@@ -149,6 +190,22 @@
 			</footer>
 
 		<!-- Scripts -->
+		<script>
+			new Glide(".images",{
+			  type: 'carousel',
+			  perView: 4,
+			  focusAt: 'center',
+			  gap: 40,
+			  breakpoints: {
+				1200:{
+				  perView: 3
+				},
+				800:{
+				  perView: 2
+				}
+			  }
+			}).mount();
+		  </script>
 			<script
 				src="https://code.jquery.com/jquery-3.4.1.js"
 				integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
