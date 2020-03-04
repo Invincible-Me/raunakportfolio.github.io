@@ -71,12 +71,16 @@ input, select, textarea {
 	-ms-appearance: none;
 	appearance: none;
 }
-a:hover, a.active {
-	background: #069370;
-	color: #fff;
-	transition: 0.5s;
+.portfolio {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
 }
+section header h2 img {
+	height: 100px;
+	width: 100px;
 
+}
 /* 
 .checkbtn {
 	font-size: 30px;
@@ -1920,37 +1924,7 @@ a:hover, a.active {
 				#header nav {
 					display: none;
 				}
-				.menu-toggle {
-					/* display: block !important; */
-					position: relative;
-					width: 30px;
-					height: 30px;
-					top: -40px;
-					margin: 5px;
-					background: #ccc;
-					text-align: center;
-					font-size: 30px;
-					color: #069370;
-					float: right;
-					cursor: pointer;
-				}
-				.menu-toggle:before {
-					content: '\f0c9';
-					font-family: fontAwesome;
-					line-height: 40px;
-					
-				}
-				.menu-toggle.active:before {
-					content: '\f00d';
-					
-				}
-				#header nav.active {
-					display: block;
-					width: 100%;
-				}
-				#header nav.active ul {
-					display: block;
-				}
+				
 				/* nav ul li a {
 					color: #FFF;
 					padding: 7px 13px;
